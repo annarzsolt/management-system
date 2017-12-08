@@ -11,7 +11,7 @@ app.get('/', function (req, res, next) {
 				res.json(err)
 			} else {
 				// render to views/user/list.ejs template file
-				res.send(200, rows)
+				res.status(200).send(rows)
 			}
 		})
 	})
