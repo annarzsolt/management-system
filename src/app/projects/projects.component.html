@@ -1,3 +1,17 @@
-<p>
-  projects works!
-</p>
+<table class='table'>
+  <thead>
+    <th>#</th>
+    <th>Project Name</th>
+    <th>Created By</th>
+    <th>Created Time</th>
+  </thead>
+  <tbody>
+      <tr [ngClass]="{'table-active': project.active==0 }" *ngFor="let project of projects" >
+          <td>{{project.id}}</td>
+          <td>{{project.project_name}}</td>
+          <td>{{project.created_by}}</td>
+          <td>{{project.created_time}}</td>
+          <td>{{project.active}}</td>
+        </tr>
+  </tbody>
+</table>
