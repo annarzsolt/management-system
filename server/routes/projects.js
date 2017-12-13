@@ -1,6 +1,14 @@
 var express = require('express');
 var app = express();
 
+var serverLog = function (req) {
+	console.log('\n*************************************');
+	var d = new Date().toISOString();
+	console.log(d);
+	infos = JSON.stringify(req.headers, null, ' ');
+	console.log(infos);
+}
+
 // SHOW LIST OF USERS
 app.get('/', function (req, res, next) {
 	req.getConnection(function (error, conn) {
@@ -14,7 +22,8 @@ app.get('/', function (req, res, next) {
 				res.status(200).send(rows)
 			}
 		})
-	})
+	});
+	serverLog(req);
 })
 
 // SHOW ADD USER FORM
