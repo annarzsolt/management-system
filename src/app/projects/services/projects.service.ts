@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import {Project} from '../models/Project'
+import {Project} from '../interfaces/Project'
 
 @Injectable()
 export class ProjectsService {
